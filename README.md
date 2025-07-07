@@ -86,4 +86,3 @@ Este projeto foi desenvolvido como parte do meu aprendizado prático para atuar 
 👨‍💻 Autor
 
 Caio
-linkedin.com/in/seu-usuario
