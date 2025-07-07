@@ -1,4 +1,4 @@
-# 🌤️ Weather Data Pipeline com Apache Airflow
+# 🌤️ Weather Data Pipeline com Apache Airflow (em dev)
 
 Este projeto implementa um pipeline de dados automatizado usando **Apache Airflow**, que coleta dados de previsão do tempo de uma API pública, processa essas informações e armazena em um banco de dados **PostgreSQL**.
 
