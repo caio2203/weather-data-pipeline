@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: weather_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  airflow:
+    image: apache/airflow:2.8.1
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/weather_db
+      AIRFLOW__CORE__FERNET_KEY: ''
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./scripts:/opt/airflow/scripts
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    command: bash -c "airflow db upgrade && airflow users create \
+             --username admin --password admin --firstname Caio --lastname Junior \
+             --role Admin --email caio@data.com && airflow scheduler & airflow webserver"
+
+volumes:
+  postgres_data:
