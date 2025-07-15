@@ -1,15 +1,15 @@
 # 🌤️ Weather Data Pipeline
 
-Este projeto implementa um pipeline de dados automatizado usando **Python**, que coleta dados de previsão do tempo de uma API pública, processa essas informações e armazena em um arquivo **CSV**.
+Este projeto implementa um pipeline de dados utilizando **Python**, que coleta dados de previsão do tempo de uma API pública, processa essas informações e armazena em arquivos **JSON** para posterior análise ou integração.
 
-O objetivo é demonstrar habilidades essenciais para a área de **Engenharia de Dados**, como orquestração de workflows, integração com APIs, ETL com Python e persistência de dados em banco relacional.
+O objetivo é demonstrar habilidades essenciais para a área de **Engenharia de Dados**, como integração com APIs, ETL com Python e persistência de dados.
 
 ---
 
 ## 🧰 Tecnologias Utilizadas
 
-- [Python 3.9+](https://www.python.org/)
-- [Docker & Docker Compose](https://www.docker.com/)
+- [Python 3.12+](https://www.python.org/)
+- [Bibliotecas Python: requests, pandas, etc.]
 - [OpenWeather API](https://openweathermap.org/api)
 
 ---
@@ -18,50 +18,73 @@ O objetivo é demonstrar habilidades essenciais para a área de **Engenharia de 
 
 - 🌐 Coleta de dados via API pública
 - 🧹 Transformação e limpeza dos dados com Python
-- 🗃️ Armazenamento dos dados em CSV
+- 🗃️ Armazenamento dos dados em arquivos JSON
 
 ---
 
 ## ⚙️ Como Executar o Projeto
 
-### 1. Clone o repositório
+1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/weather-data-pipeline-airflow.git
+git clone <url-do-repositorio>
 cd weather-data-pipeline
+```
 
+2. (Opcional) Crie e ative um ambiente virtual Python
 
-    🔑 Para obter a API Key, cadastre-se gratuitamente em https://openweathermap.org/api
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-3. Suba os containers com Docker
+3. Instale as dependências necessárias
 
-docker-compose up -d
+```bash
+pip install -r requirements.txt
+```
 
-📂 Estrutura do Projeto
+4. Configure sua chave de API do OpenWeather em um arquivo `.env` ou diretamente nos scripts.
 
+5. Execute os scripts conforme desejado:
+
+```bash
+python scripts/fetch_weather.py
+python scripts/transform_weather.py
+python scripts/load_to_db.py
+```
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
 weather-data-pipeline/
 ├── scripts/                 # Scripts Python de ETL
 │   ├── fetch_weather.py
 │   ├── transform_weather.py
-│   └── load_to_postgres.py
-├── data/                    # arquivo CSV
-├── .env                     # Variáveis de ambiente (não versionado)
-├── docker-compose.yml       # Ambiente Docker
-└── README.md
+│   └── load_to_db.py
+├── data/                    # Arquivos JSON de dados coletados
+├── README.md
+└── ...                      # Outros arquivos e pastas
+```
 
-📌 Objetivo
+---
 
-Este projeto foi desenvolvido como parte do meu aprendizado prático para atuar como Engenheiro de Dados Júnior, com foco em pipelines de dados, automação e boas práticas de orquestração com Airflow.
-✨ Melhorias Futuras
+## 📌 Objetivo
 
-    Dashboard com Streamlit para visualização dos dados
+Este projeto foi desenvolvido como parte do meu aprendizado prático para atuar como Engenheiro de Dados Júnior, com foco em pipelines de dados, automação e boas práticas em Python.
 
-    Deploy em nuvem (ex: AWS EC2 + RDS)
+---
 
-    Uso de Sensor no Airflow para aguardar condições específicas
+## ✨ Melhorias Futuras
 
-    Adição de testes unitários nos scripts
+- Dashboard com Streamlit para visualização dos dados
+- Deploy em nuvem (ex: AWS EC2 + RDS)
+- Adição de testes unitários nos scripts
 
-👨‍💻 Autor
+---
+
+## 👨‍💻 Autor
 
 Caio
