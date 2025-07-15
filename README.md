@@ -62,7 +62,6 @@ weather-data-pipeline/
 ├── scripts/                 # Scripts Python de ETL
 │   ├── fetch_weather.py
 │   ├── transform_weather.py
-│   └── load_to_db.py
 ├── data/                    # Arquivos CSV de dados coletados
 ├── README.md
 └── ...                      # Outros arquivos e pastas
