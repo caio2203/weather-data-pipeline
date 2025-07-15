@@ -1,6 +1,6 @@
 # 🌤️ Weather Data Pipeline
 
-Este projeto implementa um pipeline de dados utilizando **Python**, que coleta dados de previsão do tempo de uma API pública, processa essas informações e armazena em arquivos **JSON** para posterior análise ou integração.
+Este projeto implementa um pipeline de dados utilizando **Python**, que coleta dados de previsão do tempo de uma API pública, processa essas informações e armazena em arquivos **CSV** para posterior análise ou integração.
 
 O objetivo é demonstrar habilidades essenciais para a área de **Engenharia de Dados**, como integração com APIs, ETL com Python e persistência de dados.
 
@@ -18,7 +18,7 @@ O objetivo é demonstrar habilidades essenciais para a área de **Engenharia de 
 
 - 🌐 Coleta de dados via API pública
 - 🧹 Transformação e limpeza dos dados com Python
-- 🗃️ Armazenamento dos dados em arquivos JSON
+- 🗃️ Armazenamento dos dados em arquivos CSV
 
 ---
 
@@ -51,7 +51,6 @@ pip install -r requirements.txt
 ```bash
 python scripts/fetch_weather.py
 python scripts/transform_weather.py
-python scripts/load_to_db.py
 ```
 
 ---
@@ -64,7 +63,7 @@ weather-data-pipeline/
 │   ├── fetch_weather.py
 │   ├── transform_weather.py
 │   └── load_to_db.py
-├── data/                    # Arquivos JSON de dados coletados
+├── data/                    # Arquivos CSV de dados coletados
 ├── README.md
 └── ...                      # Outros arquivos e pastas
 ```
